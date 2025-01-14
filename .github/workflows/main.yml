@@ -1,0 +1,41 @@
+name: Playwright Automation 1
+
+on:
+    # Every day at midnight (UTC)
+  workflow_dispatch:   # Allows manual triggering
+    inputs:
+      example_input:
+        description: 'An example input'
+        required: false
+        default: 'default_value'
+
+jobs:
+  run-playwright:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out the repository containing the script
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Python (version 3.9 or as needed)
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      # Step 3: Install Python dependencies
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas playwright lxml nest_asyncio google-auth google-auth-oauthlib google-auth-httplib2 google-api-python-client
+          playwright install
+      # Step 4: Decode and save JSON file from base64
+      - name: Decode and save JSON file
+        run: echo "${{ secrets.gar }}" | base64 --decode > file.json
+        # Note: 'env' is not needed here as we're not using it in the 'run' command
+
+      # Step 5: Run your Playwright script
+      - name: Run Playwright script
+        run: |
+          python m.py
