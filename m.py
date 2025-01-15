@@ -207,8 +207,6 @@ async def main():
     "https://www.airbnb.com/s/Mijas--Spain",
     "https://www.airbnb.com/s/Arrecife--Spain",
     "https://www.airbnb.com/s/Benalmádena--Spain",
-
-
     "https://www.airbnb.com/s/Lugo--Spain",
     "https://www.airbnb.com/s/Zamora--Spain",
     "https://www.airbnb.com/s/Huesca--Spain",
@@ -282,8 +280,7 @@ async def main():
     "https://www.airbnb.com/s/El-Puerto-de-Santa-María--Spain",
     "https://www.airbnb.com/s/Sanlúcar-de-Barrameda--Spain",
     "https://www.airbnb.com/s/Chipiona--Spain",
-    "https://www.airbnb.com/s/Tarifa--Spain"
-]
+    "https://www.airbnb.com/s/Tarifa--Spain"]
 
 
 
